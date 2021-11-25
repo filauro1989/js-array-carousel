@@ -31,20 +31,40 @@ for (let i = 0; i < items.length; i++) {
     thumbImg.innerHTML += thumbImage;
 }
 
-// specifico la variabile che seleziona tutte le immagini centrali inserite
+// specifico la variabile che seleziona tutte le immagini inserite
 const imagesDom = document.querySelectorAll('.car-center .img-container');
+const thumbDom = document.querySelectorAll('.thumb-container .img-container');
 // seleziono la prima immagine inserita e gli conferisco la classe first e active
 imagesDom[0].classList.add('first', 'active');
+thumbDom[0].classList.add('first', 'active');
 // seleziono l'ultima immagine e gli conferisco la classe last
 imagesDom[imagesDom.length - 1].classList.add('last');
+thumbDom[imagesDom.length - 1].classList.add('last');
 
 // dichiaro le variabili per le frecce su e giu
 let arrowUp = document.querySelector('.arrow-up');
 let arrowDown = document.querySelector('.arrow-down');
 
 
-arrowUp.addEventListener('click', function(){
+arrowUp.addEventListener('click', function() {
+    const imageActive = document.querySelector('.car-center .active');
+    const thumbActive = document.querySelector('.thumb-container .active');
 
+    let imageClasses = imageActive.classList;
+    let thumbClasses = thumbActive.classList;
+
+    let last = false;
+    for (let index = 0; index < imageClasses.length; index++) {
+        if (imageClasses[index] == 'last') {
+            last = true;
+        }        
+    }
+
+    if(last == false) {
+        imageActive.classList.remove('active');
+        const imgNext = imageActive.nextElementSibling;
+        imgNext.classList.add('active');
+    }
 });
 
 
