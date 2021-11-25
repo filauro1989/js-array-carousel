@@ -62,6 +62,27 @@ arrowUp.addEventListener('click', function() {
 
     if(last == false) {
         imageActive.classList.remove('active');
+        const imgNext = imageActive.previousElementSibling;
+        imgNext.classList.add('active');
+    }
+});
+
+arrowDown.addEventListener('click', function() {
+    const imageActive = document.querySelector('.car-center .active');
+    const thumbActive = document.querySelector('.thumb-container .active');
+
+    let imageClasses = imageActive.classList;
+    let thumbClasses = thumbActive.classList;
+
+    let last = false;
+    for (let index = 0; index < imageClasses.length; index++) {
+        if (imageClasses[index] == 'last') {
+            last = true;
+        }        
+    }
+
+    if(last == false) {
+        imageActive.classList.remove('active');
         const imgNext = imageActive.nextElementSibling;
         imgNext.classList.add('active');
     }
