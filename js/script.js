@@ -24,7 +24,7 @@ const imgContainer = document.querySelector('.car-center');
 const thumbImg = document.querySelector('.thumb-container');
 
 for (let i = 0; i < items.length; i++) {
-    let image = `<div class="img-container d-none"><img src="${items[i]}" alt=""></div>`;
+    let image = `<div class="img-container"><img src="${items[i]}" alt=""></div>`;
     let thumbImage = `<div class="img-container opacity"><img src="${items[i]}" alt=""></div>`;
     
     imgContainer.innerHTML += image;
@@ -32,12 +32,16 @@ for (let i = 0; i < items.length; i++) {
 }
 
 // specifico la variabile che seleziona tutte le immagini centrali inserite
-const imagesDom = document.querySelectorAll('.car-center img');
+const imagesDom = document.querySelectorAll('.car-center .img-container');
 // seleziono la prima immagine inserita e gli conferisco la classe first e active
 imagesDom[0].classList.add('first', 'active');
+// seleziono l'ultima immagine e gli conferisco la classe last
+imagesDom[imagesDom.length - 1].classList.add('last');
 
+// dichiaro le variabili per le frecce su e giu
 let arrowUp = document.querySelector('.arrow-up');
 let arrowDown = document.querySelector('.arrow-down');
+
 
 arrowUp.addEventListener('click', function(){
 
