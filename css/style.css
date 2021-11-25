@@ -54,3 +54,9 @@
 .thumb-container .arrow-down {
     bottom: 0;
 }
+.opacity {
+    opacity: 0.6;
+}
+.d-none {
+    display: none;
+}

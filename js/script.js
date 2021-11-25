@@ -20,17 +20,28 @@ const text = [
     'Et temporibus voluptatum suscipit tempore aliquid deleniti aut veniam inventore eligendi ex ad ullam,'
 ];
 
-let imgContainer = document.querySelector('.car-center');
-let thumbImg = document.querySelector('.thumb-container');
+const imgContainer = document.querySelector('.car-center');
+const thumbImg = document.querySelector('.thumb-container');
 
 for (let i = 0; i < items.length; i++) {
-    let image = `<div class="img-container"><img src="${items[i]}" alt=""></div>`;
-    let thumbImage = `<div class="img-container"><img src="${items[i]}" alt=""></div>`;
+    let image = `<div class="img-container d-none"><img src="${items[i]}" alt=""></div>`;
+    let thumbImage = `<div class="img-container opacity"><img src="${items[i]}" alt=""></div>`;
     
     imgContainer.innerHTML += image;
     thumbImg.innerHTML += thumbImage;
 }
 
+// specifico la variabile che seleziona tutte le immagini centrali inserite
+const imagesDom = document.querySelectorAll('.car-center img');
+// seleziono la prima immagine inserita e gli conferisco la classe first e active
+imagesDom[0].classList.add('first', 'active');
+
+let arrowUp = document.querySelector('.arrow-up');
+let arrowDown = document.querySelector('.arrow-down');
+
+arrowUp.addEventListener('click', function(){
+
+});
 
 
 
