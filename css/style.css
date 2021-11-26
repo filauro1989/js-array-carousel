@@ -79,8 +79,8 @@
     z-index: 999;
 }
 .thumb-container .arrow-up {
-    top: 0;
+    top: 10px;
 }
 .thumb-container .arrow-down {
-    bottom: 0;
+    bottom: 10px;
 }

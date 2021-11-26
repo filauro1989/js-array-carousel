@@ -47,6 +47,7 @@ let arrowDown = document.querySelector('.arrow-down');
 
 
 arrowDown.addEventListener('click', function() {
+
     const imageActive = document.querySelector('.car-center .active');
     const thumbActive = document.querySelector('.thumb-container .active');
 
