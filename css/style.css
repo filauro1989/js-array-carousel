@@ -49,6 +49,11 @@
     width: 100%;
     height: 20%;
     display: block;
+    opacity: 0.6;
+}
+.thumb-container .img-container.active {
+    opacity: 1;
+    border: 3px solid white;
 }
 .thumb-container .arrow-up,
 .thumb-container .arrow-down {
@@ -64,7 +69,4 @@
 }
 .thumb-container .arrow-down {
     bottom: 0;
-}
-.opacity {
-    opacity: 0.6;
 }

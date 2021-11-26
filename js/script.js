@@ -64,6 +64,9 @@ arrowDown.addEventListener('click', function() {
         imageActive.classList.remove('active');
         const imgNext = imageActive.nextElementSibling;
         imgNext.classList.add('active');
+        thumbActive.classList.remove('active');
+        const thumbNext = thumbActive.nextElementSibling;
+        thumbNext.classList.add('active');
     }
 });
 
@@ -80,11 +83,19 @@ arrowUp.addEventListener('click', function() {
             first = true;
         }        
     }
+    for (let index = 0; index < thumbClasses.length; index++) {
+        if (thumbClasses[index] == 'first') {
+            first = true;
+        }        
+    }
 
     if(first == false) {
         imageActive.classList.remove('active');
         const imgNext = imageActive.previousElementSibling;
         imgNext.classList.add('active');
+        thumbActive.classList.remove('active');
+        const thumbNext = thumbActive.previousElementSibling;
+        thumbNext.classList.add('active');
     }
 });
 
