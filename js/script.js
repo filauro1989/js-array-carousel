@@ -25,7 +25,7 @@ const thumbImg = document.querySelector('.thumb-container');
 
 for (let i = 0; i < items.length; i++) {
     let image = `<div class="img-container"><img src="${items[i]}" alt=""><h1>${title[i]}</h1><p>${text[i]}</p></div>`;
-    let thumbImage = `<div class="img-container opacity"><img src="${items[i]}" alt=""></div>`;
+    let thumbImage = `<div class="img-container"><img src="${items[i]}" alt=""></div>`;
     
     divImg.innerHTML += image;
     thumbImg.innerHTML += thumbImage;
@@ -67,6 +67,11 @@ arrowDown.addEventListener('click', function() {
         thumbActive.classList.remove('active');
         const thumbNext = thumbActive.nextElementSibling;
         thumbNext.classList.add('active');
+    } else {
+        imagesDom[0].classList.add('active');
+        thumbDom[0].classList.add('active');
+        imageActive.classList.remove('active');
+        thumbActive.classList.remove('active');
     }
 });
 
@@ -96,6 +101,11 @@ arrowUp.addEventListener('click', function() {
         thumbActive.classList.remove('active');
         const thumbNext = thumbActive.previousElementSibling;
         thumbNext.classList.add('active');
+    } else {
+        imagesDom[4].classList.add('active');
+        thumbDom[4].classList.add('active');
+        imageActive.classList.remove('active');
+        thumbActive.classList.remove('active');
     }
 });
 
