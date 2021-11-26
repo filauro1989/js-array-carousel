@@ -20,16 +20,16 @@ const text = [
     'Et temporibus voluptatum suscipit tempore aliquid deleniti aut veniam inventore eligendi ex ad ullam,'
 ];
 
-const imgContainer = document.querySelector('.car-center');
+const divImg = document.querySelector('.car-center');
 const thumbImg = document.querySelector('.thumb-container');
 
 for (let i = 0; i < items.length; i++) {
-    let image = `<div class="img-container"><img src="${items[i]}" alt=""></div>`;
+    let image = `<div class="img-container"><img src="${items[i]}" alt=""><h1>${title[i]}</h1><p>${text[i]}</p></div>`;
     let thumbImage = `<div class="img-container opacity"><img src="${items[i]}" alt=""></div>`;
     
-    imgContainer.innerHTML += image;
+    divImg.innerHTML += image;
     thumbImg.innerHTML += thumbImage;
-}
+};
 
 // specifico la variabile che seleziona tutte le immagini inserite
 const imagesDom = document.querySelectorAll('.car-center .img-container');
